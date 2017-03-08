@@ -1,17 +1,17 @@
 # secretChamber
 HackReactor, GroupProject, Greenfield 
 
-_______(Concept to be Implemented)_______
+_______Keep track of Public Space Issues_______
 
-__Basic Goals__
+__Basic Features__
 
-[]
+[] Users can report/describe problems
 
-[]
+[] Users can ofer to fix issues (piggybacking) 
 
-[]
+[] Geo tagging
 
-[]
+[] 
 
 []
 
