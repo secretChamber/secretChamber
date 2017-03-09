@@ -27,12 +27,12 @@ Once the project moves into development, the press release can be used as a touc
 ## Summary ##
   > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
   
-In an attempt to bring communitites together to fix and report problems at the local level, we are developing a webapp that allows users to easily locate and report issues pertaining to public spaces. Through our app, users can seamlessly organize to solve these problems or notiy public officials to get the ball rolling. 
+In an attempt to bring communitites together to fix and report problems at the local level, we are developing a webapp that allows users to easily locate and report issues pertaining to public spaces. Through our app, users can seamlessly organize to solve these problems or notify public officials to get the ball rolling. 
 
 ## Problem ##
   > Describe the problem your product solves.
   
-Finding like minded individuals with the dirive to solve problems in your community will now be a breeze: no more confusion as to what medium should be used as the main forum for discussion, or how to organize to actually solve problems.
+Finding like minded individuals with the drive to solve problems in your community will now be a breeze: no more confusion as to what medium should be used as the main forum for discussion, or how to organize to actually solve problems.
 
 ## Solution ##
   > Describe how your product elegantly solves the problem.
