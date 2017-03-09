@@ -18,7 +18,8 @@ Once the project moves into development, the press release can be used as a touc
  
 ## Heading ##
   > Name the product in a way the reader (i.e. your target customers) will understand.
-  "NBRLY" (neighborly)
+  
+  " nābərlē " (neighborly)
 
 ## Sub-Heading ##
   > Describe who the market for the product is and what benefit they get. One sentence only underneath the title. 
@@ -45,8 +46,9 @@ Improve community involvement through technology: create a synergistic phenomeno
 
 ## How to Get Started ##
   > Describe how easy it is to get started.
-
-
+  
+Simply create an account, and you are ready to go!
+A map will allow you to pin issues near you.
 
 ## Customer Quote ##
   > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
@@ -56,4 +58,4 @@ Improve community involvement through technology: create a synergistic phenomeno
 ## Closing and Call to Action ##
   > Wrap it up and give pointers where the reader should go next.
   
- Improving your community, one tag at a time. 
+ "Improving your community, one tag at a time." 
