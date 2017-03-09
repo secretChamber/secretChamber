@@ -21,7 +21,7 @@ __Basic Features__
 
 __Advanced Goals__
 
-[]
+[] Game-afy the app: additional incentive for users to remain active.
 
 []
 
