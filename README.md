@@ -39,4 +39,4 @@ __ISSUE --> WHO's RESPONSIBLE__
 [] electrical work --> PG&E
 
 
-
+look into 'unique constraints' for the 'VOTED ON" table, making it the only VOTE table to retain the vote count.
