@@ -18,9 +18,10 @@ Once the project moves into development, the press release can be used as a touc
  
 ## Heading ##
   > Name the product in a way the reader (i.e. your target customers) will understand.
+  "NBRLY" (neighborly)
 
 ## Sub-Heading ##
-  > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
+  > Describe who the market for the product is and what benefit they get. One sentence only underneath the title. 
 
 ## Summary ##
   > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
@@ -40,11 +41,19 @@ We are strong believers in the power of communication: by simplifying the proces
 ## Quote from You ##
   > A quote from a spokesperson in your company.
 
+Improve community involvement through technology: create a synergistic phenomenon between social media and the desire for change. 
+
 ## How to Get Started ##
   > Describe how easy it is to get started.
+
+
 
 ## Customer Quote ##
   > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
 
+
+
 ## Closing and Call to Action ##
   > Wrap it up and give pointers where the reader should go next.
+  
+ Improving your community, one tag at a time. 
