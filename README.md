@@ -1,6 +1,8 @@
 # secretChamber
 HackReactor, GroupProject, Greenfield 
 
+Name: NBRLY (Neighborly)
+
 _______Keep track of Public Space Issues_______
 
 __Basic Features__
