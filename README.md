@@ -37,6 +37,3 @@ __ISSUE --> WHO's RESPONSIBLE__
 [] roadwork, landscaping --> SF Public Works
 
 [] electrical work --> PG&E
-
-
-look into 'unique constraints' for the 'VOTED ON" table, making it the only VOTE table to retain the vote count.
