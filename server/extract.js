@@ -8,7 +8,19 @@ var connection = mysql.createConnection({
 });
 connection.connect();
 
-var query = connection.query('select * from users', function(err, result) {
+var getUser = connection.query('SELECT * FROM users', function(err, result) {
+	if (err) console.log(err);
+	console.log(result);
+});
+
+var getIssue = connection.query('SELECT * FROM reported_issues', function(err, result) {
+	if (err) console.log(err);
+	console.log(Number(result[0].lat));
+});
+
+var test_id = 1;
+
+var getVotes = connection.query('SELECT COUNT (*) FROM votes WHERE rep_issue_id = ' + test_id, function(err, result) {
 	if (err) console.log(err);
 	console.log(result);
 });
