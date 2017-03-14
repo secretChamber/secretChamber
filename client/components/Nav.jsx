@@ -1,20 +1,40 @@
 import React from 'react';
-import {GoogleMapLoader, GoogleMap, Marker} from 'react-google-maps';
+import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
 
-class Map extends React.Component {
-  render () {
-    const mapContainer = <div style={{height:'100%', width:'100%'}}></div>
+export default class Example extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.toggle = this.toggle.bind(this);
+    this.state = {
+      isOpen: false
+    };
+  }
+  toggle() {
+    this.setState({
+      isOpen: !this.state.isOpen
+    });
+  }
+  render() {
     return (
-      <GoogleMapLoader 
-        containerElement = { mapContainer }
-        googleMapElement = {
-          <GoogleMap
-            defaultZoom={this.props.zoom}
-            defaultCenter={this.props.center}
-            options={{streetViewControl:false, mapTypeControl:false}}>
-          </GoogleMap>
-        }/>
-    )
+      <div>
+        <Navbar color="faded" light toggleable>
+          <NavbarToggler right onClick={this.toggle} />
+          <NavbarBrand href="/">nābərlē</NavbarBrand>
+          <Collapse isOpen={this.state.isOpen} navbar>
+            <Nav className="ml-auto" navbar>
+              <NavItem>
+                <NavLink href="/issues/">All Issues</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="http://sfgov.org/">SfGov.org</NavLink>
+              </NavItem>
+            </Nav>
+          </Collapse>
+        </Navbar>
+      </div>
+    );
   }
 }
-export default Map
+
+export default Nav
