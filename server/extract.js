@@ -15,7 +15,7 @@ var getUser = connection.query('SELECT * FROM users', function(err, result) {
 
 var getIssue = connection.query('SELECT * FROM reported_issues', function(err, result) {
 	if (err) console.log(err);
-	console.log(Number(result[0].lat));
+	console.log(result);
 });
 
 var test_id = 1;
