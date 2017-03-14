@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Map from './components/Maps.jsx'
-import Places from './components/Places.jsx'
+import Map from './components/Maps.jsx';
+import Places from './components/Places.jsx';
+import Navigation from './components/Nav.jsx';
 
 class App extends React.Component {
   render() {
@@ -12,10 +13,13 @@ class App extends React.Component {
     const zoom = 12;
     return (
       <div>
-        <div style={{width: 700, height: 400, background:"red"}}>
-          <Map center={location} zoom={zoom}/>
+      <Navigation />
+        <div>
+          <div style={{width: 700, height: 400}}>
+            <Map center={location} zoom={zoom}/>
+          </div>
+          <Places />
         </div>
-        <Places />
       </div>
     )
   }
