@@ -27252,16 +27252,16 @@ var App = function (_React$Component) {
     key: 'render',
     value: function render() {
       var location = {
-        lat: 37.78425,
-        lng: -122.42935
+        lat: 37.787792,
+        lng: -122.400063
       };
-      var zoom = 12;
+      var zoom = 18;
       return _react2.default.createElement(
         'div',
         null,
         _react2.default.createElement(
           'div',
-          { style: { width: 700, height: 400, background: "red" } },
+          { style: { width: 700, height: 400 } },
           _react2.default.createElement(_Maps2.default, { center: location, zoom: zoom })
         ),
         _react2.default.createElement(_Places2.default, null)
