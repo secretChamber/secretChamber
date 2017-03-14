@@ -30,8 +30,11 @@
     "express-partials": "^0.3.0",
     "express-session": "^1.15.1",
     "react": "^15.4.2",
+    "react-addons-css-transition-group": "^15.4.2",
+    "react-addons-transition-group": "^15.4.2",
     "react-dom": "^15.4.2",
-    "react-google-maps": "^4.11.0"
+    "react-google-maps": "^4.11.0",
+    "reactstrap": "^4.2.0"
   },
   "devDependencies": {
     "babel-core": "^6.23.1",
