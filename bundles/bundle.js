@@ -10138,6 +10138,8 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = __webpack_require__(3);
@@ -10167,12 +10169,26 @@ var Map = function (_React$Component) {
     key: 'render',
     value: function render() {
       var mapContainer = _react2.default.createElement('div', { style: { height: '100%', width: '100%' } });
+
+      var markers = this.props.markers.map(function (pin, i) {
+        var marker = {
+          position: {
+            lat: pin.location.lat,
+            lng: pin.location.lng
+          }
+        };
+        return _react2.default.createElement(_reactGoogleMaps.Marker, _extends({ key: i }, marker));
+      });
       return _react2.default.createElement(_reactGoogleMaps.GoogleMapLoader, {
         containerElement: mapContainer,
-        googleMapElement: _react2.default.createElement(_reactGoogleMaps.GoogleMap, {
-          defaultZoom: this.props.zoom,
-          defaultCenter: this.props.center,
-          options: { streetViewControl: false, mapTypeControl: false } }) });
+        googleMapElement: _react2.default.createElement(
+          _reactGoogleMaps.GoogleMap,
+          {
+            defaultZoom: this.props.zoom,
+            defaultCenter: this.props.center,
+            options: { streetViewControl: false, mapTypeControl: false } },
+          markers
+        ) });
     }
   }]);
 
@@ -27246,26 +27262,58 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var App = function (_React$Component) {
   _inherits(App, _React$Component);
 
-  function App() {
+  function App(props) {
     _classCallCheck(this, App);
 
-    return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
+    //the state should be populated by a 'get' from DB
+    var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
+
+    _this.state = {
+      pins: [{
+        issue: 'Trash',
+        location: {
+          lat: 37.7875074,
+          lng: -122.4020266
+        },
+        status: 'Reported',
+        reporter: 'Matt'
+      }, {
+        issue: 'Roadwork',
+        location: {
+          lat: 37.7894111,
+          lng: -122.4032613
+        },
+        status: 'Reported',
+        reporter: 'Jaime'
+      }, {
+        issue: 'Traffic Sign',
+        location: {
+          lat: 37.7883543,
+          lng: -122.4097812
+        },
+        status: 'Reported',
+        reporter: 'Max'
+      }]
+    };
+    return _this;
   }
 
   _createClass(App, [{
     key: 'render',
     value: function render() {
       var location = {
-        lat: 37.78425,
-        lng: -122.42935
+        lat: 37.78725,
+        lng: -122.402935
       };
-      var zoom = 12;
+      var zoom = 14;
+
       return _react2.default.createElement(
         'div',
         null,
         _react2.default.createElement(_Nav2.default, null),
         _react2.default.createElement(
           'div',
+<<<<<<< HEAD
           null,
           _react2.default.createElement(
             'div',
@@ -27274,6 +27322,17 @@ var App = function (_React$Component) {
           ),
           _react2.default.createElement(_Places2.default, null)
         )
+||||||| merged common ancestors
+          { style: { width: 700, height: 400, background: "red" } },
+          _react2.default.createElement(_Maps2.default, { center: location, zoom: zoom })
+        ),
+        _react2.default.createElement(_Places2.default, null)
+=======
+          { style: { width: 700, height: 400, background: "red" } },
+          _react2.default.createElement(_Maps2.default, { center: location, zoom: zoom, markers: this.state.pins })
+        ),
+        _react2.default.createElement(_Places2.default, null)
+>>>>>>> add static data to state
       );
     }
   }]);
