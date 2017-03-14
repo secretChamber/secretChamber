@@ -6,13 +6,13 @@ import Places from './components/Places.jsx'
 class App extends React.Component {
   render() {
     const location = {
-      lat: 37.787792,
-      lng: -122.400063
+      lat: 37.78425,
+      lng: -122.42935
     }
-    const zoom = 18;
+    const zoom = 12;
     return (
       <div>
-        <div style={{width: 700, height: 400}}>
+        <div style={{width: 700, height: 400, background:"red"}}>
           <Map center={location} zoom={zoom}/>
         </div>
         <Places />
