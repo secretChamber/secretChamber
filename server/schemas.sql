@@ -24,11 +24,3 @@ CREATE TABLE votes (
   user_id INT UNSIGNED NOT NULL,
   vote_id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY
 );
-
-
-
-
-
-
-
-
