@@ -1,4 +1,4 @@
-DROP DATABASE naberle;
+-- DROP DATABASE naberle;
 
 CREATE DATABASE naberle;
 
