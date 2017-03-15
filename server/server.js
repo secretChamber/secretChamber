@@ -1,18 +1,20 @@
 var express = require('express');
 var path = require('path');
 var bodyParser = require('body-parser');
+var mysql = require('mysql');
 
 var app = express();
-var PORT = process.env.PORT || 8080;
+var PORT = process.env.PORT || 8000;
 
 app.use(bodyParser.json());
 
 app.use(express.static(path.join(__dirname,'../public')));
-app.use('/bundles', express.static(path.join(__dirname, '../bundles')))
+app.use('/bundles', express.static(path.join(__dirname, '../bundles')));
+app.listen(PORT, function () {
+  console.log('App is listening on PORT:', PORT);
+});
 
-
-var mysql = require('mysql');
-
+// ====> server connection to database <====
 var connection = mysql.createConnection({
  host: 'localhost',
  user: 'root',
@@ -21,13 +23,13 @@ var connection = mysql.createConnection({
 });
 
 connection.connect();
+// ====> end of server/DB connection <====
 
-
-// =======> POST ISSUE WORKS <=========
-app.post('/postIssue', function(req, res) {
+// =======> POSTS WORK <=========
+app.post('/Issue', function(req, res) {
  let issue = req.body;
  let row = {
-    user_id: issue.reporter, 
+    user_id: 0, 
     lat: issue.location.lat,
     lng: issue.location.lng,
     type: issue.issue,
@@ -39,11 +41,11 @@ app.post('/postIssue', function(req, res) {
   });
 });
 
-app.post('/postUser', function(req, res) {
+app.post('/User', function(req, res) {
   let user = req.body;
   let row = {
-    username: user.key, 
-    password: user.key
+    username: user.username, 
+    password: user.password
  };
   connection.query('INSERT INTO users SET ?', row, function (err, result) {
    if (err) console.log(err);
@@ -51,27 +53,34 @@ app.post('/postUser', function(req, res) {
   });
 });
 
-app.post('/postVote', function(req, res) {
+app.post('/Vote', function(req, res) {
  let vote = req.body;
  let row = {
-  rep_issue_id: vote.key,
-  user_id: vote.key
+  rep_issue_id: vote.issueID,
+  user_id: vote.userID
  };
   connection.query('INSERT INTO votes SET ?', row, function (err, result) {
    if (err) console.log(err);
    console.log(result);
   });
 });
+// =======> end of POSTS <=======
 
-// =======> under development <=========
-// app.get('/allIssues', function(req, res) {
-//  connection.query('SELECT * FROM reported_issues', function(err, result) {
-//    if (err) console.log(err);
-//    console.log(result);
-//  });
-//     res.send(data) is this the same with react and angular??
-// });
-
-app.listen(PORT, () => {
-  console.log('App is listening on PORT:', PORT);
+// =======> GETS WORK <=========
+app.get('/Issues', function(req, res) {
+  connection.query('SELECT * FROM reported_issues', function(err, result) {
+    if (err) console.log(err);
+    console.log(result);
+    res.send(result);
+  });
 });
+
+app.get('/numberOfVotesOnIssue', (req,res) => {
+  let id = req.body.FILL_ME_IN;
+  connection.query('SELECT COUNT (*) FROM votes WHERE rep_issue_id = ' + FILL_ME_IN, function(err, result) {
+    // if (err) console.log(err);
+    console.log(result);
+    res.send(result);
+  });
+});
+// =======> end of GETS <=======
