@@ -54,7 +54,7 @@ class App extends React.Component {
           <div style={{width: 700, height: 400}}>
             <Map center={location} zoom={zoom} markers={this.state.pins}/>
           </div>
-          <Places />
+          <Places markers={this.state.pins}/>
         </div>
       </div>
     )
