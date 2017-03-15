@@ -10,7 +10,7 @@ CREATE TABLE reported_issues (
   lng VARCHAR(100) NOT NULL,
   type ENUM ('Trash', 'Roadwork', 'Traffic Sign'),
   status ENUM ('Reported', 'Resolved'),
-	rep_issue_id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY
+  rep_issue_id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY
 );
 
 CREATE TABLE users (
@@ -19,6 +19,11 @@ CREATE TABLE users (
   user_id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY
 );
 
+
+-- NOTE: we only want to keep track of the votes 
+-- and their numbers with one and the same table:
+-- it is custom and safer to only retain one 
+-- 'source' of truth for any given data point that we want to have; i.e., number of votes.
 CREATE TABLE votes (
   rep_issue_id INT UNSIGNED NOT NULL,
   user_id INT UNSIGNED NOT NULL,
