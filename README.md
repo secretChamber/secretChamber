@@ -13,21 +13,12 @@ __Basic Features__
 
 [] Geo tagging
 
-[] 
-
-[]
-
-[]
-
-[]
 
 __Advanced Goals__
 
 [] Game-afy the app: additional incentive for users to remain active.
 
 [] Submit a picture with the issue.(optional)
-
-[]
 
 
 __ISSUE --> WHO's RESPONSIBLE__
