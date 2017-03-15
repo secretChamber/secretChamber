@@ -9,12 +9,14 @@ var PORT = process.env.PORT || 8000;
 app.use(bodyParser.json());
 
 app.use(express.static(path.join(__dirname,'../public')));
+
 app.use('/bundles', express.static(path.join(__dirname, '../bundles')));
+
 app.listen(PORT, function () {
   console.log('App is listening on PORT:', PORT);
 });
 
-// ====> server connection to database <====
+
 var connection = mysql.createConnection({
  host: 'localhost',
  user: 'root',
@@ -23,7 +25,7 @@ var connection = mysql.createConnection({
 });
 
 connection.connect();
-// ====> end of server/DB connection <====
+
 
 // =======> POSTS WORK <=========
 app.post('/Issue', function(req, res) {
@@ -64,10 +66,9 @@ app.post('/Vote', function(req, res) {
    console.log(result);
   });
 });
-// =======> end of POSTS <=======
 
-// =======> GETS WORK <=========
-app.get('/Issues', function(req, res) {
+// =======> GETS under development <=========
+app.get('/allIssues', function (req, res) {
   connection.query('SELECT * FROM reported_issues', function(err, result) {
     if (err) console.log(err);
     console.log(result);
@@ -75,10 +76,10 @@ app.get('/Issues', function(req, res) {
   });
 });
 
-app.get('/numberOfVotesOnIssue', (req,res) => {
-  let id = req.body.FILL_ME_IN;
-  connection.query('SELECT COUNT (*) FROM votes WHERE rep_issue_id = ' + FILL_ME_IN, function(err, result) {
-    // if (err) console.log(err);
+app.get('/numOfVotes', function (req, res) {
+  let id = req.query.id;
+  connection.query('SELECT COUNT (*) FROM votes WHERE rep_issue_id = ' + id, function(err, result) {
+    if (err) console.log(err);
     console.log(result);
     res.send(result);
   });
