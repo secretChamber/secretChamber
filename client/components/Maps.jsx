@@ -5,10 +5,13 @@ class Map extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      infoWindowShow: false
+      pinCtr: 0,
+      allPins: [
+      ]
     }
     this.onMarkerClick = this.onMarkerClick.bind(this);
     this.closeInfo = this.closeInfo.bind(this);
+    this.dropPin = this.dropPin.bind(this);
   }
   onMarkerClick (e) {
     console.log(this.state.infoWindowShow);
@@ -19,6 +22,23 @@ class Map extends React.Component {
   }
   closeInfo (e) {
     console.log('Hello');
+  }
+
+  dropPin (e) {
+    const pins = [];
+    const pinPosition = {
+      position: {
+        lat: e.latLng.lat(),
+        lng: e.latLng.lng()
+      }
+    }
+    const allPins = this.state.allPins.slice();
+    allPins.push(<Marker key={this.state.pinCtr} {...pinPosition} />)
+    this.setState({allPins: allPins});
+    let count = this.state.pinCtr + 1;
+    this.setState({pinCtr: count});
+
+    // console.log(ctr);
   }
 
   render () {
@@ -40,10 +60,12 @@ class Map extends React.Component {
         containerElement = { mapContainer }
         googleMapElement = {
           <GoogleMap
+            onClick={this.dropPin}
             defaultZoom={this.props.zoom}
             defaultCenter={this.props.center}
             options={{streetViewControl:false, mapTypeControl:false}}>
             { markers }
+            {this.state.allPins}
           </GoogleMap>
         }/>
     )
