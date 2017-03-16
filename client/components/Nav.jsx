@@ -28,7 +28,7 @@ export default class Navigation extends React.Component {
             <NavLink href="#">All Issues</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="#">Sample Link</NavLink>
+            <NavLink href="#">My Issues</NavLink>
           </NavItem>
         </Nav>
       </div>
