@@ -8,8 +8,8 @@ class Places extends React.Component {
     const issueList = this.props.markers.map((pin, i) => {
       return(
         <li key={i}>
-          <div>Issue - {pin.issue}</div>
-          <div>Reporter - {pin.reporter}</div>
+          <div>Issue - {pin.type}</div>
+          <div>ReporterID - {pin.user_id}</div>
         </li>
       )
     })
