@@ -33,12 +33,12 @@ class Map extends React.Component {
       }
     }
     const allPins = this.state.allPins.slice();
-    allPins.push(<Marker key={this.state.pinCtr} {...pinPosition} />)
+    allPins.push(<Marker key={this.state.pinCtr} {...pinPosition}>
+      <InfoWindow content={'Marker Info Goes In This Box'}/>
+      </Marker>)
     this.setState({allPins: allPins});
     let count = this.state.pinCtr + 1;
     this.setState({pinCtr: count});
-
-    // console.log(ctr);
   }
 
   render () {
@@ -52,7 +52,7 @@ class Map extends React.Component {
         }
       }
       return <Marker key={i} {...marker} onClick={this.onMarkerClick}>
-        <InfoWindow onCloseClick={this.closeInfo} content={pin.reporter}/>
+        <InfoWindow onCloseClick={this.closeInfo} content={''+'Issue: '+pin.issue+'\n'+'Reporter: '+pin.reporter}/>
       </Marker>
     })
     return (
