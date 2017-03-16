@@ -47,12 +47,12 @@ class Map extends React.Component {
     const markers = this.props.markers.map((pin, i) => {
       const marker = {
         position: {
-          lat: pin.location.lat,
-          lng: pin.location.lng
+          lat: parseFloat(pin.location.lat),
+          lng: parseFloat(pin.location.lng)
         }
       }
       return <Marker key={i} {...marker} onClick={this.onMarkerClick}>
-        <InfoWindow onCloseClick={this.closeInfo} content={''+'Issue: '+pin.issue+'\n'+'Reporter: '+pin.reporter}/>
+        <InfoWindow onCloseClick={this.closeInfo} content={''+'Issue: '+pin.type+'\n'+'ReporterID: '+pin.user_id}/>
       </Marker>
     })
     return (
