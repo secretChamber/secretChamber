@@ -34,5 +34,52 @@ router.get('/', function (req, res) {
   });
 });
 
-module.exports = router;
+router.get('/trash', function (req, res) {
+  connection.query('SELECT * FROM reported_issues WHERE type = "Trash"', function(err, result) {
+    if (err) console.log(err);
+    console.log(result);
+    var trans = result.map(el => {
+      el.location = {
+        lat: el.lat, lng:el.lng
+      };
+      delete el.lat;
+      delete el.lng;
+      return el;
+    });
+    res.send(trans);
+  });
+});
 
+router.get('/roadwork', function (req, res) {
+  connection.query('SELECT * FROM reported_issues WHERE type = "Roadwork"', function(err, result) {
+    if (err) console.log(err);
+    console.log(result);
+    var trans = result.map(el => {
+      el.location = {
+        lat: el.lat, lng:el.lng
+      };
+      delete el.lat;
+      delete el.lng;
+      return el;
+    });
+    res.send(trans);
+  });
+});
+
+router.get('/traffic_sign', function (req, res) {
+  connection.query('SELECT * FROM reported_issues WHERE type = "Traffic Sign"', function(err, result) {
+    if (err) console.log(err);
+    console.log(result);
+    var trans = result.map(el => {
+      el.location = {
+        lat: el.lat, lng:el.lng
+      };
+      delete el.lat;
+      delete el.lng;
+      return el;
+    });
+    res.send(trans);
+  });
+});
+
+module.exports = router;
