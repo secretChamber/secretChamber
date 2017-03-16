@@ -6,6 +6,7 @@ import Navigation from './components/Nav.jsx';
 import Warning from './components/Warning.jsx';
 import Reporting from './components/Reporting.jsx';
 import axios from 'axios';
+import Warning from './components/Warning.jsx';
 
 class App extends React.Component {
   constructor(props) {
