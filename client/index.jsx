@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import Map from './components/Maps.jsx';
 import Places from './components/Places.jsx';
 import Navigation from './components/Nav.jsx';
+import Warning from './components/Warning.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -50,6 +51,7 @@ class App extends React.Component {
     return (
       <div>
         <Navigation />
+        <Warning />
         <div>
           <div style={{width: 700, height: 400}}>
             <Map center={location} zoom={zoom} markers={this.state.pins}/>
