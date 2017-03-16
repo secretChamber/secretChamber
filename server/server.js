@@ -76,6 +76,8 @@ app.get('/allIssues', function (req, res) {
       el.location = {
         lat: el.lat, lng:el.lng
       };
+      delete el.lat;
+      delete el.lng;
       return el;
     });
     res.send(withLocationKey);
