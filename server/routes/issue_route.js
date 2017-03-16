@@ -8,12 +8,12 @@ router.post('/', function(req, res) {
     user_id: 0, 
     lat: issue.location.lat,
     lng: issue.location.lng,
-    type: issue.issue,
+    type: issue.type,
     status: 'Reported'
  };
   connection.query('INSERT INTO reported_issues SET ?', row, function (err, result) {
    if (err) console.log(err);
-   console.log(result);
+   // console.log(result);
    res.sendStatus(201).end();
   });
 });
@@ -21,7 +21,7 @@ router.post('/', function(req, res) {
 router.get('/', function (req, res) {
   connection.query('SELECT * FROM reported_issues', function(err, result) {
     if (err) console.log(err);
-    console.log(result);
+    // console.log(result);
     var trans = result.map(el => {
       el.location = {
         lat: el.lat, lng:el.lng
@@ -37,7 +37,7 @@ router.get('/', function (req, res) {
 router.get('/trash', function (req, res) {
   connection.query('SELECT * FROM reported_issues WHERE type = "Trash"', function(err, result) {
     if (err) console.log(err);
-    console.log(result);
+    // console.log(result);
     var trans = result.map(el => {
       el.location = {
         lat: el.lat, lng:el.lng
@@ -53,7 +53,7 @@ router.get('/trash', function (req, res) {
 router.get('/roadwork', function (req, res) {
   connection.query('SELECT * FROM reported_issues WHERE type = "Roadwork"', function(err, result) {
     if (err) console.log(err);
-    console.log(result);
+    // console.log(result);
     var trans = result.map(el => {
       el.location = {
         lat: el.lat, lng:el.lng
@@ -69,7 +69,7 @@ router.get('/roadwork', function (req, res) {
 router.get('/traffic_sign', function (req, res) {
   connection.query('SELECT * FROM reported_issues WHERE type = "Traffic Sign"', function(err, result) {
     if (err) console.log(err);
-    console.log(result);
+    // console.log(result);
     var trans = result.map(el => {
       el.location = {
         lat: el.lat, lng:el.lng
