@@ -1,5 +1,6 @@
 import React from 'react';
 import {GoogleMapLoader, GoogleMap, Marker, InfoWindow} from 'react-google-maps';
+import axios from 'axios';
 
 class Map extends React.Component {
   constructor(props){
@@ -42,7 +43,20 @@ class Map extends React.Component {
     this.setState({allPins: allPins});
     let count = this.state.pinCtr + 1;
     this.setState({pinCtr: count});
-    console.log(this.state.allPins);
+    
+    console.log('is this the obj?', this.state.allPins);
+
+    var newPin = this.state.allPins[this.state.allPins.length-1];
+    var row = {
+      type: newPin.props.issue,
+      reporter: newPin.props.name,
+      location: {
+        lat: newPin.props.position.lat,
+        lng: newPin.props.position.lng        
+      }
+    }
+    console.log('this is the row ', row)
+    axios.post('/issue', row);
   }
 
   render () {
