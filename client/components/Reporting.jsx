@@ -30,9 +30,9 @@ class Reporting extends React.Component{
       <div>
         <select onChange={this.props.menu}>
           <option value="default">Choose an issue</option>
-          <option value="trash">Trash Pickup</option>
-          <option value="road">Roadwork</option>
-          <option value="traffic">Traffic Light</option>
+          <option value="Trash">Trash Pickup</option>
+          <option value="Road Work">Roadwork</option>
+          <option value="Traffic Sign">Traffic Light</option>
         </select>
         <input type="text" onChange={this.props.name} placeholder='Enter your Name' />
         <input type="text" onChange={this.props.description} placeholder="Enter a description" />

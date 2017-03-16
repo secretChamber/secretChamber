@@ -58,10 +58,10 @@ class App extends React.Component {
         <Navigation />
         <div>
           <div style={{width: 700, height: 400}}>
-            <Map center={location} zoom={zoom} markers={this.state.pins}/>
+            <Map center={location} zoom={zoom} markers={this.state.pins} name={this.state.name} issue={this.state.issue} submit={this.submitInfo}/>
           </div>
           <div>
-            <Reporting name={this.updatingName} description={this.updatingDescription} menu={this.menuChange} submit={this.submitInfo} />
+            <Reporting name={this.updatingName} description={this.updatingDescription} menu={this.menuChange} />
           </div>
           <Places markers={this.state.pins}/>
          </div>

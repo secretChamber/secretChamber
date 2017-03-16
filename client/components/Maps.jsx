@@ -25,8 +25,11 @@ class Map extends React.Component {
   }
 
   dropPin (e) {
+    this.props.submit();
     const pins = [];
     const pinPosition = {
+      name: this.props.name,
+      issue: this.props.issue,
       position: {
         lat: e.latLng.lat(),
         lng: e.latLng.lng()
@@ -39,6 +42,7 @@ class Map extends React.Component {
     this.setState({allPins: allPins});
     let count = this.state.pinCtr + 1;
     this.setState({pinCtr: count});
+    console.log(this.state.allPins);
   }
 
   render () {
