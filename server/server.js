@@ -67,12 +67,18 @@ app.post('/Vote', function(req, res) {
   });
 });
 
-// =======> GETS under development <=========
+// =======> GETS WORK <=========
 app.get('/allIssues', function (req, res) {
   connection.query('SELECT * FROM reported_issues', function(err, result) {
     if (err) console.log(err);
     console.log(result);
-    res.send(result);
+    var withLocationKey = result.map(el => {
+      el.location = {
+        lat: el.lat, lng:el.lng
+      };
+      return el;
+    });
+    res.send(withLocationKey);
   });
 });
 
