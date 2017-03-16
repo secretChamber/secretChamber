@@ -56,7 +56,7 @@ class Map extends React.Component {
       </Marker>
     })
     return (
-      <GoogleMapLoader 
+      <GoogleMapLoader
         containerElement = { mapContainer }
         googleMapElement = {
           <GoogleMap

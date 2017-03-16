@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import Map from './components/Maps.jsx';
 import Places from './components/Places.jsx';
 import Navigation from './components/Nav.jsx';
+import Reporting from './components/Reporting.jsx';
 import axios from 'axios';
 
 class App extends React.Component {
@@ -12,8 +13,27 @@ class App extends React.Component {
     this.state = {
       pins: []
     }
+
+    this.updatingName = this.updatingName.bind(this);
+    this.updatingDescription = this.updatingDescription.bind(this);
+    this.submitInfo = this.submitInfo.bind(this);
+    this.menuChange = this.menuChange.bind(this);
     this.getIssues = this.getIssues.bind(this);
     this.getIssues();
+  }
+
+  updatingName(e) {
+    this.setState ({name: e.target.value})
+  }
+  updatingDescription(e) {
+    this.setState ({description: e.target.value})
+  }
+
+  submitInfo(e){
+    console.log(this.state.issue + " " + this.state.name + " and " + this.state.description);
+  }
+  menuChange(e) {
+    this.setState({issue: e.target.value});
   }
   getIssues() {
     axios.get('/issue')
@@ -40,8 +60,11 @@ class App extends React.Component {
           <div style={{width: 700, height: 400}}>
             <Map center={location} zoom={zoom} markers={this.state.pins}/>
           </div>
+          <div>
+            <Reporting name={this.updatingName} description={this.updatingDescription} menu={this.menuChange} submit={this.submitInfo} />
+          </div>
           <Places markers={this.state.pins}/>
-        </div>
+         </div>
       </div>
     )
   }
