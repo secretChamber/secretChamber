@@ -20,6 +20,7 @@ class App extends React.Component {
     this.submitInfo = this.submitInfo.bind(this);
     this.menuChange = this.menuChange.bind(this);
     this.getIssues = this.getIssues.bind(this);
+    this.postIssues = this.postIssues.bind(this);
     this.getIssues();
   }
 
@@ -47,6 +48,15 @@ class App extends React.Component {
         console.error('Get Issues Failed.')
       });
   }
+  postIssues(row) {
+    axios.post('/issue', row)
+      .then(() => {
+        this.getIssues();
+      })
+      .catch(err => {
+        console.error('Post Issues Failed')
+      });
+  }
   render() {
     const location = {
       lat: 37.78725,
@@ -60,7 +70,7 @@ class App extends React.Component {
         <Warning />
         <div>
           <div style={{width: 700, height: 400}}>
-            <Map center={location} zoom={zoom} markers={this.state.pins} name={this.state.name} issue={this.state.issue} submit={this.submitInfo}/>
+            <Map center={location} zoom={zoom} markers={this.state.pins} name={this.state.name} issue={this.state.issue} submit={this.submitInfo} postIssues={this.postIssues}/>
           </div>
           <div>
             <Reporting name={this.updatingName} description={this.updatingDescription} menu={this.menuChange} />
@@ -73,14 +83,3 @@ class App extends React.Component {
 }
 
 ReactDOM.render(<App />, document.getElementById('app'));
-
-/*
-mysql> insert into reported_issues (user_id, lat, lng, type, status) values (1, 37.7894111, -122.4032613, 'Trash', 'Reported');
-Query OK, 1 row affected (0.01 sec)
-
-mysql> insert into reported_issues (user_id, lat, lng, type, status) values (2, 37.7875074, -122.4020266, 'Road Work', 'Reported');
-Query OK, 1 row affected (0.00 sec)
-
-mysql> insert into reported_issues (user_id, lat, lng, type, status) values (3, 37.7883543, -122.4097812, 'Traffic Sign', 'Reported');
-Query OK, 1 row affected (0.00 sec)
-*/

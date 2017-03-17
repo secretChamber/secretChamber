@@ -14,7 +14,6 @@ router.post('/', function(req, res) {
  console.log('==================================>',row);
   connection.query('INSERT INTO reported_issues SET ?', row, function (err, result) {
    if (err) console.log(err);
-   // console.log(result);
    res.sendStatus(201).end();
   });
 });
@@ -22,7 +21,6 @@ router.post('/', function(req, res) {
 router.get('/', function (req, res) {
   connection.query('SELECT * FROM reported_issues', function(err, result) {
     if (err) console.log(err);
-    // console.log(result);
     var trans = result.map(el => {
       el.location = {
         lat: el.lat, lng:el.lng
