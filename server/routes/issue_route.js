@@ -51,7 +51,7 @@ router.get('/trash', function (req, res) {
 });
 
 router.get('/roadwork', function (req, res) {
-  connection.query('SELECT * FROM reported_issues WHERE type = "Roadwork"', function(err, result) {
+  connection.query('SELECT * FROM reported_issues WHERE type = "Road Work"', function(err, result) {
     if (err) console.log(err);
     // console.log(result);
     var trans = result.map(el => {
