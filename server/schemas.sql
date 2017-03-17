@@ -10,7 +10,7 @@ CREATE TABLE reported_issues (
   user_id INT UNSIGNED NOT NULL,
   lat VARCHAR(100) NOT NULL,
   lng VARCHAR(100) NOT NULL,
-  type ENUM ('Trash', 'Road Work', 'Traffic Sign'),
+  type VARCHAR (100),
   status ENUM ('Reported', 'Resolved'),
 	rep_issue_id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY
 );
