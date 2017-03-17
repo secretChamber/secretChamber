@@ -78,7 +78,7 @@ ReactDOM.render(<App />, document.getElementById('app'));
 mysql> insert into reported_issues (user_id, lat, lng, type, status) values (1, 37.7894111, -122.4032613, 'Trash', 'Reported');
 Query OK, 1 row affected (0.01 sec)
 
-mysql> insert into reported_issues (user_id, lat, lng, type, status) values (2, 37.7875074, -122.4020266, 'Roadwork', 'Reported');
+mysql> insert into reported_issues (user_id, lat, lng, type, status) values (2, 37.7875074, -122.4020266, 'Road Work', 'Reported');
 Query OK, 1 row affected (0.00 sec)
 
 mysql> insert into reported_issues (user_id, lat, lng, type, status) values (3, 37.7883543, -122.4097812, 'Traffic Sign', 'Reported');

@@ -11,6 +11,7 @@ router.post('/', function(req, res) {
     type: issue.type,
     status: 'Reported'
  };
+ console.log('==================================>',row);
   connection.query('INSERT INTO reported_issues SET ?', row, function (err, result) {
    if (err) console.log(err);
    // console.log(result);
