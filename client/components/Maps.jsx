@@ -44,6 +44,9 @@ class Map extends React.Component {
         lng: newPin.props.position.lng        
       }
     }
+
+    console.log('in map.jsx:', row)
+    
     this.props.postIssues(row);
   }
 
