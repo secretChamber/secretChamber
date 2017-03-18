@@ -27,7 +27,8 @@ class Map extends React.Component {
       position: {
         lat: e.latLng.lat(),
         lng: e.latLng.lng()
-      }
+      }, 
+      description: this.props.description
     }
     const allPins = this.state.allPins.slice();
     allPins.push(<Marker key={this.state.pinCtr} {...pinPosition} />)
@@ -35,17 +36,18 @@ class Map extends React.Component {
     let count = this.state.pinCtr + 1;
     this.setState({pinCtr: count});
     
-    var newPin = this.state.allPins[this.state.allPins.length-1];
+    var newPin = this.state.allPins[this.state.allPins.length - 1];
     var row = {
       type: newPin.props.issue,
       reporter: newPin.props.name,
       location: {
         lat: newPin.props.position.lat,
         lng: newPin.props.position.lng        
-      }
+      },
+      description: newPin.props.description
     }
 
-    console.log('in map.jsx:', row)
+    console.log('new attempt in map.jsx:', row)
     
     this.props.postIssues(row);
   }
@@ -61,7 +63,7 @@ class Map extends React.Component {
         }
       }
       return <Marker key={i} {...marker} onClick={this.onMarkerClick}>
-        <InfoWindow content={''+'Issue: '+pin.type+'\n'+'ReporterID: '+pin.user_id}/>
+        <InfoWindow content={''+'Issue: '+pin.type+'\n'+'Reporter: '+pin.reporter}/>
       </Marker>
     })
     return (

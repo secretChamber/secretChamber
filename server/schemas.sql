@@ -10,6 +10,7 @@ USE naberle;
 CREATE TABLE reported_issues (
   user_id INT UNSIGNED NOT NULL,
   reporter VARCHAR (25) NOT NULL,
+  description VARCHAR (200) NOT NULL,
   lat VARCHAR (20) NOT NULL,
   lng VARCHAR(20) NOT NULL,
   type ENUM ('Trash', 'Road Work', 'Traffic Sign') NOT NULL,
