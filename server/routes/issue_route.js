@@ -4,14 +4,24 @@ var connection = require('../database');
 
 router.post('/', function(req, res) {
  let issue = req.body;
+ 
+// COMENTARY ON THE [row] VARIABLE BELLOW:
+
+// 1. [userID] will be hard-codded
+// as long as user profiles are not implemented;
+
+// 2. [status] is hard-coded to 'Reported'
+// since the plan was for an Admin 
+// to be responsible for updating the status of an issue.
+
  let row = {
-    user_id: 0, 
+    user_id: 0,
+    reporter: issue.reporter,
     lat: issue.location.lat,
     lng: issue.location.lng,
     type: issue.type,
     status: 'Reported'
  };
- console.log('==================================>',row);
   connection.query('INSERT INTO reported_issues SET ?', row, function (err, result) {
    if (err) console.log(err);
    res.sendStatus(201).end();
