@@ -1,0 +1,36 @@
+html{
+    margin-left: 100px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    margin-right: 100px;
+    border-top-width: 25px;
+    border-left-width: 25px;
+    border-right-width: 25px;
+    border-bottom-width: 25px;
+    padding-top: 25px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+body {
+    /*background-image: url(https://cdn.citylab.com/media/img/citylab/2015/08/shutterstock_188435336/lead_large.jpg?1440019771);
+    background-image: url(http://www.brendondesimone.com/wp-content/uploads/2011/06/Neighbors.jpg);*/
+}
+
+span {
+    color: red;
+    text-align: center;
+    margin-left: 100px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+
+.inputDiv {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: 100px;
+}
+
+.issues {
+    margin-left: 100px;
+}

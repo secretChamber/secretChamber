@@ -5,6 +5,7 @@ import Places from './components/Places.jsx';
 import Navigation from './components/Nav.jsx';
 import Reporting from './components/Reporting.jsx';
 import axios from 'axios';
+import Warning from './components/Warning.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -66,14 +67,16 @@ class App extends React.Component {
     return (
       <div>
         <Navigation />
+        <Warning />
         <div>
           <div style={{width: 700, height: 400}}>
             <Map center={location} zoom={zoom} markers={this.state.pins} name={this.state.name} issue={this.state.issue} description={this.state.description} submit={this.submitInfo} postIssues={this.postIssues}/>
           </div>
-          <div>
+
+          <div className="inputDiv">
             <Reporting name={this.updatingName} description={this.updatingDescription} menu={this.menuChange} />
           </div>
-          <Places markers={this.state.pins}/>
+          <Places markers={this.state.pins} />
          </div>
       </div>
     )

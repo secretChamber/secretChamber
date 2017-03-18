@@ -14,7 +14,7 @@ class Places extends React.Component {
       )
     })
     return (
-      <div>
+      <div className="issues">
         Issues
         <ol>
           {issueList}
