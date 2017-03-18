@@ -70,7 +70,7 @@ class App extends React.Component {
         <Warning />
         <div>
           <div style={{width: 700, height: 400}}>
-            <Map center={location} zoom={zoom} markers={this.state.pins} name={this.state.name} issue={this.state.issue} submit={this.submitInfo} postIssues={this.postIssues}/>
+            <Map center={location} zoom={zoom} markers={this.state.pins} name={this.state.name} issue={this.state.issue} description={this.state.description} submit={this.submitInfo} postIssues={this.postIssues}/>
           </div>
           <div>
             <Reporting name={this.updatingName} description={this.updatingDescription} menu={this.menuChange} />
