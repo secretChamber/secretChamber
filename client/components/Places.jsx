@@ -9,7 +9,7 @@ class Places extends React.Component {
       return(
         <li key={i}>
           <div>Issue - {pin.type}</div>
-          <div>ReporterID - {pin.user_id}</div>
+          <div>Reporter - {pin.reporter}</div>
         </li>
       )
     })
