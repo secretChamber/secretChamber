@@ -7,14 +7,15 @@ class Map extends React.Component {
     this.state = {
       pinCtr: 0,
       allPins: [],
-      infoWindowShow: false
+      infoWindowShow: -1
     }
-    this.onMarkerClick = this.onMarkerClick.bind(this);
+    //this.onMarkerClick = this.onMarkerClick.bind(this);
     this.dropPin = this.dropPin.bind(this);
   }
-  onMarkerClick (e) {
+  onMarkerClick (id) {
+    console.log(this.state.allPins);
     this.setState({
-      infoWindowShow: !(this.state.infoWindowShow)
+      infoWindowShow: id
     });
   }
 
@@ -28,7 +29,8 @@ class Map extends React.Component {
         lat: e.latLng.lat(),
         lng: e.latLng.lng()
       },
-      description: this.props.description
+      description: this.props.description,
+      clicked: false
     }
     const allPins = this.state.allPins.slice();
     allPins.push(<Marker key={this.state.pinCtr} {...pinPosition} />)
@@ -54,15 +56,16 @@ class Map extends React.Component {
     const mapContainer = <div style={{height:'100%', width:'100%'}}></div>
 
     const markers = this.props.markers.map((pin, i) => {
+      console.log(pin.rep_issue_id);
       const marker = {
         position: {
           lat: parseFloat(pin.location.lat),
           lng: parseFloat(pin.location.lng)
         }
       }
-      return <Marker key={i} {...marker} onClick={this.onMarkerClick}>
+      return <Marker key={pin.rep_issue_id} {...marker} onClick={this.onMarkerClick.bind(this, pin.rep_issue_id)}>
         {
-          this.state.infoWindowShow ? 
+          this.state.infoWindowShow === pin.rep_issue_id ?
           <InfoWindow content={''+'Issue: '+pin.type+'\n'+'Reporter: '+pin.reporter}/>
           :null
         }
