@@ -1,11 +1,12 @@
-DROP DATABASE naberle;
+-- DROP DATABASE naberle;
 
 CREATE DATABASE naberle;
 
 USE naberle;
 
--- default status to reported: 
--- some Admin would be responsible to change the status to 'Resolved'
+-- default [status] is set to "Reported": 
+-- some Admin would be responsible to 
+-- change the status to 'Resolved' (not implemented).
 
 CREATE TABLE reported_issues (
   user_id INT UNSIGNED NOT NULL,
@@ -24,20 +25,14 @@ CREATE TABLE users (
   user_id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY
 );
 
--- NOTE: we only want to keep track of the votes 
--- and their numbers with the same table:
--- it is custom and safer to only retain one 
--- 'source' of truth for any given data point.
+-- NOTE: we should keep track of who voted on what issue
+-- and how many votes an issue has with a single table:
+-- it is customary and safer to only retain one 
+-- 'source' of truth for any given data point; i.e., 
+-- we should not also have a 'number of votes' column 
+-- in the reported_issues table.
 CREATE TABLE votes (
   rep_issue_id INT UNSIGNED NOT NULL,
   user_id INT UNSIGNED NOT NULL,
   vote_id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY
 );
-
-
-
-
-
-
-
-
