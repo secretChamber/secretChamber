@@ -2,8 +2,12 @@ var express = require('express');
 var router = express.Router();
 var connection = require('../database');
 
-router.post('/', function(req, res) {
-	console.log('fired user route');
+// user profile capabilities were not implemented in the front-end, 
+// but the backend has a basic capacity for storing user name and password.
+// NOTE: passwords ar enot being encrypted
+
+router.post('/', function (req, res) {
+  console.log('fired user route');
   let user = req.body;
   let row = {
     username: user.username, 

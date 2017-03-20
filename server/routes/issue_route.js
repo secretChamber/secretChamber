@@ -2,17 +2,14 @@ var express = require('express');
 var router = express.Router();
 var connection = require('../database');
 
-router.post('/', function(req, res) {
+router.post('/', function (req, res) {
  let issue = req.body;
  
-// COMENTARY ON THE [row] VARIABLE BELLOW:
-
-// 1. [userID] is be hard-codded
-//    as long as user profiles are not implemented;
-
-// 2. [status] is hard-coded to 'Reported'
-//    since the plan was for an Admin 
-//    to be responsible for updating the status of an issue.
+  // About the [row] variable bellow:
+  // (1) [userID] is hard-codded as long as user 
+  //      profiles are not implemented in the front-end;
+  // (2) [status] is hard-coded to 'Reported' since the plan 
+  //      was for an Admin to be responsible for updating the status of an issue.
 
  let row = {
     user_id: 0,
@@ -31,9 +28,9 @@ router.post('/', function(req, res) {
 });
 
 router.get('/', function (req, res) {
-  connection.query('SELECT * FROM reported_issues', function(err, result) {
+  connection.query('SELECT * FROM reported_issues', function (err, result) {
     if (err) console.log(err);
-    var trans = result.map(el => {
+    var withLocationKey = result.map(el => {
       el.location = {
         lat: el.lat, lng:el.lng
       };
@@ -41,15 +38,14 @@ router.get('/', function (req, res) {
       delete el.lng;
       return el;
     });
-    res.send(trans);
+    res.send(withLocationKey);
   });
 });
 
 router.get('/trash', function (req, res) {
-  connection.query('SELECT * FROM reported_issues WHERE type = "Trash"', function(err, result) {
+  connection.query('SELECT * FROM reported_issues WHERE type = "Trash"', function (err, result) {
     if (err) console.log(err);
-    // console.log(result);
-    var trans = result.map(el => {
+    var withLocationKey = result.map(el => {
       el.location = {
         lat: el.lat, lng:el.lng
       };
@@ -57,15 +53,14 @@ router.get('/trash', function (req, res) {
       delete el.lng;
       return el;
     });
-    res.send(trans);
+    res.send(withLocationKey);
   });
 });
 
 router.get('/roadwork', function (req, res) {
-  connection.query('SELECT * FROM reported_issues WHERE type = "Road Work"', function(err, result) {
+  connection.query('SELECT * FROM reported_issues WHERE type = "Road Work"', function (err, result) {
     if (err) console.log(err);
-    // console.log(result);
-    var trans = result.map(el => {
+    var withLocationKey = result.map(el => {
       el.location = {
         lat: el.lat, lng:el.lng
       };
@@ -73,15 +68,14 @@ router.get('/roadwork', function (req, res) {
       delete el.lng;
       return el;
     });
-    res.send(trans);
+    res.send(withLocationKey);
   });
 });
 
 router.get('/traffic_sign', function (req, res) {
-  connection.query('SELECT * FROM reported_issues WHERE type = "Traffic Sign"', function(err, result) {
+  connection.query('SELECT * FROM reported_issues WHERE type = "Traffic Sign"', function (err, result) {
     if (err) console.log(err);
-    // console.log(result);
-    var trans = result.map(el => {
+    var withLocationKey = result.map(el => {
       el.location = {
         lat: el.lat, lng:el.lng
       };
@@ -89,7 +83,7 @@ router.get('/traffic_sign', function (req, res) {
       delete el.lng;
       return el;
     });
-    res.send(trans);
+    res.send(withLocationKey);
   });
 });
 
