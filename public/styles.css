@@ -1,13 +1,7 @@
 html{
-    margin-left: 100px;
-    margin-top: 25px;
-    margin-bottom: 25px;
-    margin-right: 100px;
-    border-top-width: 25px;
-    border-left-width: 25px;
-    border-right-width: 25px;
-    border-bottom-width: 25px;
-    padding-top: 25px;
+    margin: 10px 250px 50px 250px;
+    border-width: 25px;
+    padding-top: 15px;
     padding-left: 10px;
     padding-right: 10px;
 }
@@ -32,6 +26,17 @@ span {
 }
 h1 {
     font-family: 'Pacifico', cursive;
+    font-weight: 1000;
     color: #b4e356;
     text-align: center;
+}
+body {
+    position: relative;
+    display: inline-block;
+}
+
+.nav {
+    text-align: center;
+    position: relative;
+    display: inline-block;
 }

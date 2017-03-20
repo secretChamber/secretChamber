@@ -10,13 +10,13 @@ class Reporting extends React.Component{
   render() {
     return (
       <div>
-        <select onChange={this.props.menu}>
+        <select style={{marginRight: 20}} onChange={this.props.menu}>
           <option value="default">Choose an issue</option>
           <option value="Trash">Trash Pickup</option>
           <option value="Road Work">Road Work</option>
           <option value="Traffic Sign">Traffic Light</option>
         </select>
-        <input type="text" onChange={this.props.name} placeholder='Enter your Name' />
+        <input style={{marginRight: 20}} type="text" onChange={this.props.name} placeholder='Enter your Name' />
         <input type="text" onChange={this.props.description} placeholder="Enter a description" />
       </div>
     )
