@@ -1,41 +1,65 @@
 html{
-    margin: 10px 250px 50px 250px;
-    border-width: 25px;
-    padding-top: 15px;
-    padding-left: 10px;
-    padding-right: 10px;
+  margin: 10px 250px 50px 250px;
+  border-width: 25px;
+  padding-top: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 span {
-    color: red;
-    text-align: center;
-    margin-left: 100px;
-    padding-top: 0px;
-    padding-bottom: 0px;
-    margin-bottom: 0px;
+  color: red;
+  text-align: center;
+  margin-left: 100px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
 }
 
 .inputDiv {
-    margin-top: 30px;
-    margin-bottom: 30px;
-    margin-left: 100px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: 100px;
 }
 
 .issues {
-    margin-left: 100px;
+  text-align: center;
+  border: 2px solid grey;
+
+  border-radius: 5px;
+  background-color: #d3f296;
 }
+
 h1 {
-    font-family: 'Pacifico', cursive;
-    color: #b4e356;
-    text-align: center;
+  font-family: 'Pacifico', cursive;
+  color: #b4e356;
+  text-align: center;
 }
+
+h3 {
+  font-family: 'Pacifico', cursive; 
+}
+
 body {
-    position: relative;
-    display: inline-block;
+  position: relative;
+  display: inline-block;
 }
 
 .nav {
-    text-align: center;
-    position: relative;
-    display: inline-block;
+  text-align: center;
+  position: relative;
+  display: inline-block;
+}
+
+.listItem {
+  list-style-type: none;
+
+  border: 3px solid grey;
+  border-width: 1px 3px 3px 1px;
+
+  border-radius: 5px;
+  margin-right: 28px;
+  margin-bottom: 5px;
+  text-align: center;
+  background-color: white;
+
 }
