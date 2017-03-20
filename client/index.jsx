@@ -66,7 +66,7 @@ class App extends React.Component {
 
     return (
       <div>
-        <Navigation />
+        <Navigation className="nav"/>
         <Warning />
         <div>
           <div style={{width: 700, height: 400}}>
