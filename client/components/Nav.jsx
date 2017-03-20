@@ -22,13 +22,13 @@ export default class Navigation extends React.Component {
       <div>
         <Nav pills>
           <NavItem>
-            <NavLink href="/#" active>nābərlē</NavLink>
+            <NavLink style={{fontFamily:'Quicksand', color:'#77A618', fontSize:'20'}} href="/#" active>nābərlē</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="#">All Issues</NavLink>
+            <NavLink style={{fontFamily:'Quicksand', color:'#77A618', fontSize:'20'}} href="#">All Issues</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="#">My Issues</NavLink>
+            <NavLink style={{fontFamily:'Quicksand', color:'#77A618', fontSize:'20'}} href="#">My Issues</NavLink>
           </NavItem>
         </Nav>
       </div>

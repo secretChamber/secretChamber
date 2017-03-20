@@ -77,7 +77,9 @@ class App extends React.Component {
 
     return (
       <div>
-        <Navigation className="nav"/>
+        <div style={{display:'flex', justifyContent:'center', color:'#77A618'}}>
+          <Navigation className="nav"/>
+        </div>
         <Warning />
         <div>
           <div style={{width: 700, height: 400}}>

@@ -1,5 +1,5 @@
 html {
-  margin: 10px 250px 50px 250px;
+  margin: 10px 250px 50px 350px;
   border-width: 25px;
   padding-top: 15px;
   padding-left: 10px;
@@ -21,6 +21,7 @@ h1 {
   font-family: 'Pacifico', cursive;
   color: #b4e356;
   text-align: center;
+  font-size: 60px;
 }
 
 h3 {
@@ -73,4 +74,8 @@ input {
 
 .space {
   height: 20px;
+}
+
+li:hover {
+  background-color: #CBF27D;
 }
