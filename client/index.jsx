@@ -19,6 +19,7 @@ class App extends React.Component {
     this.updatingDescription = this.updatingDescription.bind(this);
     this.submitInfo = this.submitInfo.bind(this);
     this.menuChange = this.menuChange.bind(this);
+    this.clearFields = this.clearFields.bind(this);
     this.getIssues = this.getIssues.bind(this);
     this.postIssues = this.postIssues.bind(this);
     this.getIssues();
@@ -37,6 +38,12 @@ class App extends React.Component {
   menuChange(e) {
     this.setState({issue: e.target.value});
   }
+
+  clearFields (e) {
+   document.getElementById('name').value = '',
+   document.getElementById('description').value = ''
+  }
+
   getIssues() {
     axios.get('/issue')
       .then(({ data }) => {
@@ -70,7 +77,7 @@ class App extends React.Component {
         <Warning />
         <div>
           <div style={{width: 700, height: 400}}>
-            <Map center={location} zoom={zoom} markers={this.state.pins} name={this.state.name} issue={this.state.issue} description={this.state.description} submit={this.submitInfo} postIssues={this.postIssues}/>
+            <Map center={location} zoom={zoom} markers={this.state.pins} name={this.state.name} issue={this.state.issue} description={this.state.description} submit={this.submitInfo} postIssues={this.postIssues} clearFields={this.clearFields}/>
           </div>
 
           <div className="inputDiv">

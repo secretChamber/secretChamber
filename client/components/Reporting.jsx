@@ -16,8 +16,8 @@ class Reporting extends React.Component{
           <option value="Road Work">Road Work</option>
           <option value="Traffic Sign">Traffic Light</option>
         </select>
-        <input style={{marginRight: 20}} type="text" onChange={this.props.name} placeholder='Enter your Name' />
-        <input type="text" onChange={this.props.description} placeholder="Enter a description" />
+        <input id='name' style={{marginRight: 20}} type="text" onChange={this.props.name} placeholder='Enter your Name' />
+        <input id='description' type="text" onChange={this.props.description} placeholder="Enter a description" />
       </div>
     )
   }
