@@ -10,6 +10,7 @@ class Places extends React.Component {
         <li className="listItem" key={i}>
           <div>Issue - {pin.type}</div>
           <div>Neighbor - {pin.reporter}</div>
+          <div style={{fontStyle:'italic'}}>{pin.description}</div>
         </li>
       )
     })
