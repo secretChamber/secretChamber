@@ -6,15 +6,15 @@ class Map extends React.Component {
     super(props);
     this.state = {
       pinCtr: 0,
-      allPins: [
-      ]
+      allPins: [],
+      infoWindowShow: false
     }
     this.onMarkerClick = this.onMarkerClick.bind(this);
     this.dropPin = this.dropPin.bind(this);
   }
   onMarkerClick (e) {
     this.setState({
-      infoWindowShow: true
+      infoWindowShow: !(this.state.infoWindowShow)
     });
   }
 
@@ -61,7 +61,11 @@ class Map extends React.Component {
         }
       }
       return <Marker key={i} {...marker} onClick={this.onMarkerClick}>
-        <InfoWindow content={''+'Issue: '+pin.type+'\n'+'Reporter: '+pin.reporter}/>
+        {
+          this.state.infoWindowShow ? 
+          <InfoWindow content={''+'Issue: '+pin.type+'\n'+'Reporter: '+pin.reporter}/>
+          :null
+        }
       </Marker>
     })
     return (

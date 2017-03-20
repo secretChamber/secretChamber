@@ -4,13 +4,12 @@ import Map from './components/Maps.jsx';
 import Places from './components/Places.jsx';
 import Navigation from './components/Nav.jsx';
 import Reporting from './components/Reporting.jsx';
-import axios from 'axios';
 import Warning from './components/Warning.jsx';
+import axios from 'axios';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
-    //the state should be populated by a 'get' from DB
     this.state = {
       pins: []
     }
@@ -28,6 +27,7 @@ class App extends React.Component {
   updatingName(e) {
     this.setState ({name: e.target.value})
   }
+
   updatingDescription(e) {
     this.setState ({description: e.target.value})
   }
@@ -35,6 +35,7 @@ class App extends React.Component {
   submitInfo(e){
     console.log(this.state.issue + " " + this.state.name + " and " + this.state.description);
   }
+
   menuChange(e) {
     this.setState({issue: e.target.value});
   }
@@ -56,6 +57,7 @@ class App extends React.Component {
         console.error('Get Issues Failed.')
       });
   }
+
   postIssues(row) {
     axios.post('/issue', row)
       .then(() => {
@@ -65,6 +67,7 @@ class App extends React.Component {
         console.error('Post Issues Failed')
       });
   }
+  
   render() {
     const location = {
       lat: 37.78725,
