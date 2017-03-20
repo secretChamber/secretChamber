@@ -15,9 +15,6 @@ span {
   color: red;
   text-align: center;
   margin-left: 100px;
-  padding-top: 0px;
-  padding-bottom: 0px;
-  margin-bottom: 0px;
 }
 
 h1 {
@@ -30,6 +27,9 @@ h3 {
   font-family: 'Pacifico', cursive; 
 }
 
+input {
+  margin-right: 20px;
+}
 
 .nav {
   text-align: center;
@@ -49,6 +49,7 @@ h3 {
   font-size: 16px;
   padding: 30px;
   cursor: pointer;
+  margin-right: 20px;
 }
 
 .issues {
@@ -71,5 +72,5 @@ h3 {
 }
 
 .space {
-  height: 25px;
+  height: 20px;
 }

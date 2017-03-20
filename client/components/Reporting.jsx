@@ -10,7 +10,7 @@ class Reporting extends React.Component{
   render() {
     return (
       <div>
-        <select id='select' style={{marginRight: 20}} onChange={this.props.menu}>
+        <select id='select' onChange={this.props.menu}>
           <option value="default">Choose an issue</option>
           <option value="Trash">Trash Pickup</option>
           <option value="Road Work">Road Work</option>
