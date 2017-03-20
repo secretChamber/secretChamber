@@ -27,7 +27,7 @@ class Map extends React.Component {
       position: {
         lat: e.latLng.lat(),
         lng: e.latLng.lng()
-      }, 
+      },
       description: this.props.description
     }
     const allPins = this.state.allPins.slice();
@@ -35,21 +35,19 @@ class Map extends React.Component {
     this.setState({allPins: allPins});
     let count = this.state.pinCtr + 1;
     this.setState({pinCtr: count});
-    
+
     var newPin = this.state.allPins[this.state.allPins.length - 1];
     var row = {
       type: newPin.props.issue,
       reporter: newPin.props.name,
       location: {
         lat: newPin.props.position.lat,
-        lng: newPin.props.position.lng        
+        lng: newPin.props.position.lng
       },
       description: newPin.props.description
     }
-
-    console.log('new attempt in map.jsx:', row)
-    
     this.props.postIssues(row);
+    this.props.clearFields();
   }
 
   render () {
