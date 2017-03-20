@@ -84,7 +84,7 @@ class App extends React.Component {
             <Map center={location} zoom={zoom} markers={this.state.pins} name={this.state.name} issue={this.state.issue} description={this.state.description} submit={this.submitInfo} postIssues={this.postIssues} clearFields={this.clearFields}/>
           </div>
 
-          <div className="inputDiv">
+          <div className="inputsDiv">
             <Reporting name={this.updatingName} description={this.updatingDescription} menu={this.menuChange} />
           </div>
           <Places markers={this.state.pins} />
