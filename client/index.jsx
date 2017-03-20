@@ -42,6 +42,7 @@ class App extends React.Component {
   clearFields (e) {
    document.getElementById('name').value = '',
    document.getElementById('description').value = ''
+   document.getElementById('select').value = 'default'
   }
 
   getIssues() {
