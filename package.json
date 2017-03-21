@@ -7,7 +7,7 @@
     "start": "node server/server.js",
     "build": "webpack",
     "build:watch": "webpack --watch",
-    "postinstall": "npm i; npm run build; mysql -u root < server/schemas.sql",
+    "postinstall": "npm install; npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
