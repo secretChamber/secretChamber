@@ -18,7 +18,7 @@
     "asfdasdzFa"
   ],
   "engines": {
-    "node": ">=7.4.0"
+    "node": "7.4.0"
   },
   "author": "secret_chamber",
   "license": "ISC",
