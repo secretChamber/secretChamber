@@ -1,5 +1,5 @@
 # secretChamber
-HackReactor, GroupProject, Greenfield 
+HackReactor, Greenfield 
 
 Name: NBRLY (Neighborly)
 
